@@ -1,0 +1,16 @@
+# 크래시가 PySide6 버전과 무관하다는 게 확인됨(6.10.3/6.11.2/6.6.3.1 전부
+# ucrtbase.dll의 정확히 같은 주소에서 죽음, 2026-09-08) — 버전을 낮춰도
+# 얻는 게 없고 화면 스타일만 달라지므로 최신인 6.11.2로 되돌림. 자세한
+# 내용은 All2/CLAUDE.md의 크래시 기록 참고.
+PySide6==6.11.2
+openpyxl>=3.1
+XlsxWriter>=3.2
+pyhwp>=0.1b15
+lxml>=5.0
+pytest>=8.0
+
+# 위하고 자동 업로드(core/wehago_upload.py, ui/wehago_upload_dialog.py)용 —
+# 무겁고(크로미움 번들) 이 기능을 실제로 켜기 전엔 나머지 앱 동작에 필요
+# 없어서, 설치 후 별도로 `playwright install chromium`까지 한 번 더 해야
+# 브라우저 자동화가 동작한다(pip 패키지만으로는 브라우저 바이너리가 안 깔림).
+playwright>=1.62
